@@ -44,10 +44,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
     <main class="py-5 bg-light">
         <div class="container">
-            <?php echo displayMessage(); // Or \AuthBasic\Config\displayMessage(); ?>
-
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-7">
+                    <?php echo displayMessage(); // Or \AuthBasic\Config\displayMessage(); ?>
                     <div class="card shadow-sm">
                         <div class="card-header bg-primary text-white text-center">
                             <h2 class="card-title mb-0">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!

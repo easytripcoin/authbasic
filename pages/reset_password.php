@@ -10,7 +10,7 @@ use PDOException;
 
 // Check if token is provided
 if (!isset($_GET['token']) || empty($_GET['token'])) {
-    redirectWithMessage('forgot_password', 'danger', 'Invalid password reset link.');
+    redirectWithMessage('forgot-password', 'danger', 'Invalid password reset link.');
 }
 
 $token = $_GET['token'];
@@ -23,10 +23,10 @@ try {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$user) {
-        redirectWithMessage('forgot_password', 'danger', 'Invalid or expired password reset link.');
+        redirectWithMessage('forgot-password', 'danger', 'Invalid or expired password reset link.');
     }
 } catch (PDOException $e) {
-    redirectWithMessage('forgot_password', 'danger', 'Database error: ' . $e->getMessage());
+    redirectWithMessage('forgot-password', 'danger', 'Database error: ' . $e->getMessage());
 }
 ?>
 
